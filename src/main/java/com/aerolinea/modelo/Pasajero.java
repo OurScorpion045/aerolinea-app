@@ -52,7 +52,7 @@ public class Pasajero {
     }
 
     public void setFechaNacimiento(LocalDateTime fechaNacimiento) {
-        this.fechaNacimiento = fechaNacimiento;
+        this.fechaNacimiento =  fechaNacimiento;
     }
 
     public String getNacionalidad() {
