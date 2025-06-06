@@ -7,12 +7,20 @@ public class Pasajero {
     private String nombre;
     private String apellido;
     private LocalDateTime fechaNacimiento;
+    private String nacionalidad;
+    private String pasaporte;
+    private String email;
+    private int telefono;
 
-    public Pasajero(int idPasajero, String nombre, String apellido, LocalDateTime fechaNacimiento) {
+    public Pasajero(int idPasajero, String nombre, String apellido, LocalDateTime fechaNacimiento, String nacionalidad, String pasaporte, String email, int telefono) {
         this.idPasajero = idPasajero;
         this.nombre = nombre;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
+        this.nacionalidad = nacionalidad;
+        this.pasaporte = pasaporte;
+        this.email = email;
+        this.telefono = telefono;
     }
 
     public int getIdPasajero() {
@@ -45,6 +53,38 @@ public class Pasajero {
 
     public void setFechaNacimiento(LocalDateTime fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
+    }
+
+    public String getNacionalidad() {
+        return nacionalidad;
+    }
+
+    public void setNacionalidad(String nacionalidad) {
+        this.nacionalidad = nacionalidad;
+    }
+
+    public String getPasaporte() {
+        return pasaporte;
+    }
+
+    public void setPasaporte(String pasaporte) {
+        this.pasaporte = pasaporte;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
     }
 }
 

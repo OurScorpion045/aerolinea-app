@@ -10,12 +10,13 @@ public class Vuelo {
     private LocalDateTime fechaLLegada;
     private String estado;
 
-    public Vuelo(int idVuelo, int idRuta, int idAvion, LocalDateTime fechaSalida, LocalDateTime fechaLLegada) {
+    public Vuelo(int idVuelo, int idRuta, int idAvion, LocalDateTime fechaSalida, LocalDateTime fechaLLegada, String estado) {
         this.idVuelo = idVuelo;
         this.idRuta = idRuta;
         this.idAvion = idAvion;
         this.fechaSalida = fechaSalida;
         this.fechaLLegada = fechaLLegada;
+        this.estado = estado;
     }
 
     public int getIdVuelo() {
