@@ -10,16 +10,21 @@ public class InicializadorBD {
         String urlSinBD = "jdbc:mysql://" + Config.get("db.host") + ":" + Config.get("db.port") + "/";
         String user = Config.get("db.user");
         String pass = Config.get("db.password");
+        String scriptPath = Config.get("db.sqlscript");
 
         try (Connection conn = DriverManager.getConnection(urlSinBD, user, pass);
              Statement stmt = conn.createStatement()) {
 
             stmt.executeUpdate("CREATE DATABASE IF NOT EXISTS " + dbName);
-
             stmt.execute("USE " + dbName);
 
             try (BufferedReader br = new BufferedReader(new InputStreamReader(
-                    InicializadorBD.class.getClassLoader().getResourceAsStream("script.sql")))) {
+                    InicializadorBD.class.getClassLoader().getResourceAsStream(scriptPath)))) {
+
+                if (br == null) {
+                    throw new RuntimeException("No se encontró el archivo SQL: " + scriptPath);
+                }
+
                 StringBuilder sql = new StringBuilder();
                 String line;
                 while ((line = br.readLine()) != null) {
