@@ -7,15 +7,15 @@ public class Vuelo {
     private int idRuta;
     private int idAvion;
     private LocalDateTime fechaSalida;
-    private LocalDateTime fechaLLegada;
+    private LocalDateTime fechaLlegada;
     private String estado;
 
-    public Vuelo(int idVuelo, int idRuta, int idAvion, LocalDateTime fechaSalida, LocalDateTime fechaLLegada, String estado) {
+    public Vuelo(int idVuelo, int idRuta, int idAvion, LocalDateTime fechaSalida, LocalDateTime fechaLlegada, String estado) {
         this.idVuelo = idVuelo;
         this.idRuta = idRuta;
         this.idAvion = idAvion;
         this.fechaSalida = fechaSalida;
-        this.fechaLLegada = fechaLLegada;
+        this.fechaLlegada = fechaLlegada;
         this.estado = estado;
     }
 
@@ -51,12 +51,12 @@ public class Vuelo {
         this.fechaSalida = fechaSalida;
     }
 
-    public LocalDateTime getFechaLLegada() {
-        return fechaLLegada;
+    public LocalDateTime getFechaLlegada() {
+        return fechaLlegada;
     }
 
-    public void setFechaLLegada(LocalDateTime fechaLLegada) {
-        this.fechaLLegada = fechaLLegada;
+    public void setFechaLlegada(LocalDateTime fechaLlegada) {
+        this.fechaLlegada = fechaLlegada;
     }
 
     public String getEstado() {

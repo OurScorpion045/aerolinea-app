@@ -5,14 +5,14 @@ public class Avion  {
     private String modelo;
     private String fabricante;
     private int capacidad;
-    private int añoFabricacion;
+    private int anioFabricacion;
 
-    public Avion(int idAvion, String modelo, String fabricante, int capacidad, int añoFabricacion) {
+    public Avion(int idAvion, String modelo, String fabricante, int capacidad, int anioFabricacion) {
         this.idAvion = idAvion;
         this.modelo = modelo;
         this.fabricante = fabricante;
         this.capacidad = capacidad;
-        this.añoFabricacion = añoFabricacion;
+        this.anioFabricacion = anioFabricacion;
     }
 
     public int getIdAvion() {
@@ -47,11 +47,11 @@ public class Avion  {
         this.capacidad = capacidad;
     }
 
-    public int getAñoFabricacion() {
-        return añoFabricacion;
+    public int getAnioFabricacion() {
+        return anioFabricacion;
     }
 
-    public void setAñoFabricacion(int añoFabricacion) {
-        this.añoFabricacion = añoFabricacion;
+    public void setAnioFabricacion(int anioFabricacion) {
+        this.anioFabricacion = anioFabricacion;
     }
 }

@@ -108,4 +108,22 @@ CREATE TABLE IF NOT EXISTS equipaje (
     descripcion VARCHAR(250),
     costo_extra INT,
     FOREIGN KEY (id_checkin) REFERENCES checkin(id_checkin)
-)
+);
+
+CREATE TABLE IF NOT EXISTS boleto (
+    id_boleto INT PRIMARY KEY AUTO_INCREMENT,
+    id_reserva INT NOT NULL,
+    id_pasajero INT NOT NULL,
+    id_vuelo INT NOT NULL,
+    id_checkin INT,
+    id_pago INT,
+    clase VARCHAR(50),
+    precio_total DOUBLE,
+    fecha_emision DATETIME,
+
+    FOREIGN KEY (id_reserva) REFERENCES reserva(id_reserva),
+    FOREIGN KEY (id_pasajero) REFERENCES pasajero(id_pasajero),
+    FOREIGN KEY (id_vuelo) REFERENCES vuelo(id_vuelo),
+    FOREIGN KEY (id_checkin) REFERENCES checkin(id_checkin),
+    FOREIGN KEY (id_pago) REFERENCES pago(id_pago)
+);
