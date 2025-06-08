@@ -16,7 +16,7 @@ public class PanelPasajeros extends JPanel {
     private PasajeroDAO pasajeroDAO;
 
     public PanelPasajeros() {
-        pasajeroDAO = new PasajeroDAO();
+       // pasajeroDAO = new PasajeroDAO();
 
         setLayout(new BorderLayout());
 
