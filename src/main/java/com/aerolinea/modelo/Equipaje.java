@@ -50,7 +50,7 @@ public class Equipaje {
     public double getCostoExtra() {
         return costoExtra;
     }
-
+    //comentario
     public void setCostoExtra(double costoExtra) {
         this.costoExtra = costoExtra;
     }
