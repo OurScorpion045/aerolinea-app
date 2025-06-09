@@ -56,8 +56,6 @@ public class PanelVuelos extends JFrame {
         buttonPanel.add(bttnGuardar);
         add(panel, BorderLayout.CENTER);
         add(buttonPanel, BorderLayout.SOUTH);
-        add(panel, BorderLayout.CENTER);
-        add(buttonPanel, BorderLayout.SOUTH);
 
         bttnGuardar.addActionListener((ActionEvent e) -> {
             guardarVuelos();
