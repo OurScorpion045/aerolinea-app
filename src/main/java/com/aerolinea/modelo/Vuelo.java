@@ -22,7 +22,6 @@ public class Vuelo {
     public int getIdVuelo() {
         return idVuelo;
     }
-
     public void setIdVuelo(int idVuelo) {
         this.idVuelo = idVuelo;
     }
@@ -30,7 +29,6 @@ public class Vuelo {
     public int getIdRuta() {
         return idRuta;
     }
-
     public void setIdRuta(int idRuta) {
         this.idRuta = idRuta;
     }
@@ -38,7 +36,6 @@ public class Vuelo {
     public int getIdAvion() {
         return idAvion;
     }
-
     public void setIdAvion(int idAvion) {
         this.idAvion = idAvion;
     }
@@ -46,7 +43,6 @@ public class Vuelo {
     public LocalDateTime getFechaSalida() {
         return fechaSalida;
     }
-
     public void setFechaSalida(LocalDateTime fechaSalida) {
         this.fechaSalida = fechaSalida;
     }
@@ -54,7 +50,6 @@ public class Vuelo {
     public LocalDateTime getFechaLlegada() {
         return fechaLlegada;
     }
-
     public void setFechaLlegada(LocalDateTime fechaLlegada) {
         this.fechaLlegada = fechaLlegada;
     }
@@ -62,7 +57,6 @@ public class Vuelo {
     public String getEstado() {
         return estado;
     }
-
     public void setEstado(String estado) {
         this.estado = estado;
     }
