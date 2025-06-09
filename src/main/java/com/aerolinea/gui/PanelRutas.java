@@ -35,7 +35,7 @@ public class PanelRutas extends JFrame{
         panel.add(idAeropuertoOrigen);
         panel.add(new JLabel("Id del Aeropuerto de Destino: "));
         panel.add(idAeropuertoDestino);
-        panel.add(new JLabel("Duracion del Vuelo (en minutos): "));
+        panel.add(new JLabel("Duración del Vuelo (en minutos): "));
         panel.add(duracion);
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(bttnGuardar);
