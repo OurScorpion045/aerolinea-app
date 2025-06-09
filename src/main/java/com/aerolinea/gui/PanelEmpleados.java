@@ -20,7 +20,7 @@ public class PanelEmpleados extends JFrame{
     private JButton bttnGuardar;
 
     public PanelEmpleados() {
-        setTitle ("Registro de Aeropuerto");
+        setTitle ("Registro de Empleado");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize (350, 300);
         setLocationRelativeTo(null);
