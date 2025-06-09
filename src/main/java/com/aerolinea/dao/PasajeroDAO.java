@@ -21,7 +21,7 @@ public class PasajeroDAO {
             stmt.setString(4, pasajero.getNacionalidad());
             stmt.setString(5, pasajero.getPasaporte());
             stmt.setString(6, pasajero.getEmail());
-            stmt.setInt(7, pasajero.getTelefono());
+            stmt.setString(7, pasajero.getTelefono());
             stmt.executeUpdate();
         }
     }
@@ -35,7 +35,7 @@ public class PasajeroDAO {
             stmt.setString(4, pasajero.getNacionalidad());
             stmt.setString(5, pasajero.getPasaporte());
             stmt.setString(6, pasajero.getEmail());
-            stmt.setInt(7, pasajero.getTelefono());
+            stmt.setString(7, pasajero.getTelefono());
             stmt.setInt(8, pasajero.getIdPasajero());
             stmt.executeUpdate();
         }
@@ -63,7 +63,7 @@ public class PasajeroDAO {
                             rs.getString("nacionalidad"),
                             rs.getString("pasaporte"),
                             rs.getString("email"),
-                            rs.getInt("telefono")
+                            rs.getString("telefono")
                     );
                 }
             }
@@ -85,7 +85,7 @@ public class PasajeroDAO {
                         rs.getString("nacionalidad"),
                         rs.getString("pasaporte"),
                         rs.getString("email"),
-                        rs.getInt("telefono")
+                        rs.getString("telefono")
                 );
                 lista.add(pasajero);
             }

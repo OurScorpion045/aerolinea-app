@@ -93,7 +93,7 @@ public class PanelPasajeros extends JPanel {
                     txtNacionalidad.getText(),
                     txtPasaporte.getText(),
                     txtEmail.getText(),
-                    Integer.parseInt(txtTelefono.getText())
+                    txtTelefono.getText()
             );
             pasajeroDAO.insertar(p);
             cargarPasajeros();
@@ -114,7 +114,7 @@ public class PanelPasajeros extends JPanel {
                         txtNacionalidad.getText(),
                         txtPasaporte.getText(),
                         txtEmail.getText(),
-                        Integer.parseInt(txtTelefono.getText())
+                        txtTelefono.getText()
                 );
                 pasajeroDAO.actualizar(p);
                 cargarPasajeros();
