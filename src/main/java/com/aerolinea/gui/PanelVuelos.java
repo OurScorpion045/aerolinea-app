@@ -44,7 +44,7 @@ public class PanelVuelos extends JFrame {
         panel.add(idVuelo);
         panel.add(new JLabel("Id de la Ruta: "));
         panel.add(idRuta);
-        panel.add(new JLabel("Id del Avion: "));
+        panel.add(new JLabel("Id del Avión: "));
         panel.add(idAvion);
         panel.add(new JLabel("Fecha de Salida: "));
         panel.add(spinnerSalida);
