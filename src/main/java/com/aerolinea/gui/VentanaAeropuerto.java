@@ -35,7 +35,7 @@ public class VentanaAeropuerto extends JFrame{
         panel.add(textNombre);
         panel.add(new JLabel("Ciudad: "));
         panel.add(textCiudad);
-        panel.add(new JLabel("Pais: "));
+        panel.add(new JLabel("País: "));
         panel.add(textPais);
         JPanel buttonPanel = new JPanel();
         buttonPanel.add(bttnGuardar);
