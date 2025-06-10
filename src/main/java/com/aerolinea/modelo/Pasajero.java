@@ -10,9 +10,9 @@ public class Pasajero {
     private String nacionalidad;
     private String pasaporte;
     private String email;
-    private int telefono;
+    private String telefono;
 
-    public Pasajero(int idPasajero, String nombre, String apellido, LocalDateTime fechaNacimiento, String nacionalidad, String pasaporte, String email, int telefono) {
+    public Pasajero(int idPasajero, String nombre, String apellido, LocalDateTime fechaNacimiento, String nacionalidad, String pasaporte, String email, String telefono) {
         this.idPasajero = idPasajero;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -79,11 +79,11 @@ public class Pasajero {
         this.email = email;
     }
 
-    public int getTelefono() {
+    public String getTelefono() {
         return telefono;
     }
 
-    public void setTelefono(int telefono) {
+    public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
 }

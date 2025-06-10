@@ -16,13 +16,21 @@ public class VueloDAO {
 
     public void insertar(Vuelo vuelo) throws SQLException {
         String sql = "INSERT INTO vuelo (id_ruta, id_avion, fecha_salida, fecha_llegada, estado) VALUES (?, ?, ?, ?, ?)";
-        try (PreparedStatement stmt = conexion.prepareStatement(sql)) {
+        try (PreparedStatement stmt = conexion.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
             stmt.setInt(1, vuelo.getIdRuta());
             stmt.setInt(2, vuelo.getIdAvion());
-            stmt.setTimestamp(3, Timestamp.valueOf(vuelo.getFechaSalida()));
-            stmt.setTimestamp(4, Timestamp.valueOf(vuelo.getFechaLlegada()));
+            stmt.setTimestamp(3, vuelo.getFechaSalida() != null ? Timestamp.valueOf(vuelo.getFechaSalida()) : null);
+            stmt.setTimestamp(4, vuelo.getFechaLlegada() != null ? Timestamp.valueOf(vuelo.getFechaLlegada()) : null);
             stmt.setString(5, vuelo.getEstado());
-            stmt.executeUpdate();
+            int filas = stmt.executeUpdate();
+
+            if (filas > 0) {
+                try (ResultSet rs = stmt.getGeneratedKeys()) {
+                    if (rs.next()) {
+                        vuelo.setIdVuelo(rs.getInt(1));  // Actualiza el ID generado
+                    }
+                }
+            }
         }
     }
 
@@ -31,8 +39,8 @@ public class VueloDAO {
         try (PreparedStatement stmt = conexion.prepareStatement(sql)) {
             stmt.setInt(1, vuelo.getIdRuta());
             stmt.setInt(2, vuelo.getIdAvion());
-            stmt.setTimestamp(3, Timestamp.valueOf(vuelo.getFechaSalida()));
-            stmt.setTimestamp(4, Timestamp.valueOf(vuelo.getFechaLlegada()));
+            stmt.setTimestamp(3, vuelo.getFechaSalida() != null ? Timestamp.valueOf(vuelo.getFechaSalida()) : null);
+            stmt.setTimestamp(4, vuelo.getFechaLlegada() != null ? Timestamp.valueOf(vuelo.getFechaLlegada()) : null);
             stmt.setString(5, vuelo.getEstado());
             stmt.setInt(6, vuelo.getIdVuelo());
             stmt.executeUpdate();
@@ -57,8 +65,8 @@ public class VueloDAO {
                             rs.getInt("id_vuelo"),
                             rs.getInt("id_ruta"),
                             rs.getInt("id_avion"),
-                            rs.getTimestamp("fecha_salida").toLocalDateTime(),
-                            rs.getTimestamp("fecha_llegada").toLocalDateTime(),
+                            rs.getTimestamp("fecha_salida") != null ? rs.getTimestamp("fecha_salida").toLocalDateTime() : null,
+                            rs.getTimestamp("fecha_llegada") != null ? rs.getTimestamp("fecha_llegada").toLocalDateTime() : null,
                             rs.getString("estado")
                     );
                 }
@@ -77,8 +85,8 @@ public class VueloDAO {
                         rs.getInt("id_vuelo"),
                         rs.getInt("id_ruta"),
                         rs.getInt("id_avion"),
-                        rs.getTimestamp("fecha_salida").toLocalDateTime(),
-                        rs.getTimestamp("fecha_llegada").toLocalDateTime(),
+                        rs.getTimestamp("fecha_salida") != null ? rs.getTimestamp("fecha_salida").toLocalDateTime() : null,
+                        rs.getTimestamp("fecha_llegada") != null ? rs.getTimestamp("fecha_llegada").toLocalDateTime() : null,
                         rs.getString("estado")
                 );
                 lista.add(vuelo);
